@@ -4,13 +4,13 @@ public class Classroom {
 
     private String classId;
     private String className;
-    private String teacherInCharge;
+    private String tName;
 
-    public Classroom(String classId, String className, String teacherInCharge) {
+    public Classroom(String classId, String className, String tName) {
         super();
         this.classId = classId;
         this.className = className;
-        this.teacherInCharge = teacherInCharge;
+        this.tName = tName;
     }
 
     public String getClassId() {
@@ -29,11 +29,11 @@ public class Classroom {
         this.className = className;
     }
 
-    public String getTeacherInCharge() {
-        return teacherInCharge;
+    public String getTName() {
+        return tName;
     }
 
-    public void setTeacherInCharge(String teacherInCharge) {
-        this.teacherInCharge = teacherInCharge;
+    public void setTName(String tName) {
+        this.tName = tName;
     }
 }

@@ -14,21 +14,21 @@ public interface ClassMapper {
     @Select("SELECT * FROM Class")
     List<Classroom> getClassroomList();
 
-    @Select("SELECT teacherInCharge FROM Class")
-    List<String> getTeacherInCharge();
+    @Select("SELECT tName FROM Class")
+    List<String> getTName();
 
     @Select("SELECT className FROM Class")
     List<String> getClassName();
 
-    @Insert("INSERT INTO Class VALUES(#{classId}, #{className}, #{teacherInCharge})")
+    @Insert("INSERT INTO Class VALUES(#{classId}, #{className}, #{tName})")
     int insertClassroom(@Param("classId") String classId,
                           @Param("className") String className,
-                          @Param("teacherInCharge") String teacherInCharge);
+                          @Param("tName") String tName);
 
-    @Update("UPDATE Class SET className=#{className}, teacherInCharge=#{teacherInCharge} WHERE classId=#{classId}")
+    @Update("UPDATE Class SET className=#{className}, tName=#{tName} WHERE classId=#{classId}")
     int updateClassroom(@Param("classId") String classId,
                           @Param("className") String className,
-                          @Param("teacherInCharge") String teacherInCharge);
+                          @Param("tName") String tName);
 
     @Delete("DELETE FROM Class WHERE classId=#{classId}")
     int deleteClassroom(@Param("classId") String classId);

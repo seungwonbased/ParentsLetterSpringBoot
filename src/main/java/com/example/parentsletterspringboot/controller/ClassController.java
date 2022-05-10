@@ -26,9 +26,9 @@ public class ClassController {
         return mapper.getClassroomList();
     }
 
-    @GetMapping("/class/teacherincharge")
-    public List<String> getTeacherInCharge() {
-        return mapper.getTeacherInCharge();
+    @GetMapping("/class/tName")
+    public List<String> getTName() {
+        return mapper.getTName();
     }
 
     @GetMapping("/class/classname")
@@ -38,18 +38,18 @@ public class ClassController {
 
     // 삽입
     @PutMapping("/class/{classId}")
-    public void putClass(@PathVariable("classId") String classId,
+    public void putClass(@PathVariable String classId,
                          @RequestParam("className") String className,
-                         @RequestParam("teacherInCharge") String teacherInCharge) {
-        mapper.insertClassroom(classId, className, teacherInCharge);
+                         @RequestParam("tName") String tName) {
+        mapper.insertClassroom(classId, className, tName);
     }
 
     // 수정
     @PostMapping("/class/{classId}")
     public void postClass(@PathVariable("classId") String classId,
                           @RequestParam("className") String className,
-                          @RequestParam("teacherInCharge") String teacherInCharge) {
-        mapper.updateClassroom(classId, className, teacherInCharge);
+                          @RequestParam("tName") String tName) {
+        mapper.updateClassroom(classId, className, tName);
     }
 
     // 삭제
