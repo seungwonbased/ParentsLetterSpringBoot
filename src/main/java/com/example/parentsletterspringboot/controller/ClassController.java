@@ -31,22 +31,23 @@ public class ClassController {
         return mapper.getTName();
     }
 
-    @GetMapping("/class/classname")
+    @GetMapping("/class/className")
     public List<String> getClassName() {
         return mapper.getClassName();
     }
 
     // 삽입
     @PutMapping("/class/{classId}")
-    public void putClass(@PathVariable String classId,
+    public void putClass(@PathVariable int classId,
                          @RequestParam("className") String className,
-                         @RequestParam("tName") String tName) {
-        mapper.insertClassroom(classId, className, tName);
+                         @RequestParam("tName") String tName,
+                         @RequestParam("tId") String tId) {
+        mapper.insertClassroom(classId, className, tName, tId);
     }
 
     // 수정
     @PostMapping("/class/{classId}")
-    public void postClass(@PathVariable("classId") String classId,
+    public void postClass(@PathVariable("classId") int classId,
                           @RequestParam("className") String className,
                           @RequestParam("tName") String tName) {
         mapper.updateClassroom(classId, className, tName);
@@ -54,7 +55,7 @@ public class ClassController {
 
     // 삭제
     @DeleteMapping("/class/{classId}")
-    public void deleteClass(@PathVariable("classId") String classId) {
+    public void deleteClass(@PathVariable("classId") int classId) {
         mapper.deleteClassroom(classId);
     }
 

@@ -2,22 +2,24 @@ package com.example.parentsletterspringboot.model;
 
 public class Classroom {
 
-    private String classId;
+    private int classId;
     private String className;
     private String tName;
+    private String tId;
 
-    public Classroom(String classId, String className, String tName) {
+    public Classroom(int classId, String className, String tName, String tId) {
         super();
         this.classId = classId;
         this.className = className;
         this.tName = tName;
+        this.tId = tId;
     }
 
-    public String getClassId() {
+    public int getClassId() {
         return classId;
     }
 
-    public void setClassId(String classId) {
+    public void setClassId(int classId) {
         this.classId = classId;
     }
 
@@ -35,5 +37,13 @@ public class Classroom {
 
     public void setTName(String tName) {
         this.tName = tName;
+    }
+
+    public String getTId() {
+        return tId;
+    }
+
+    public void setTId(String tId) {
+        this.tId = tId;
     }
 }

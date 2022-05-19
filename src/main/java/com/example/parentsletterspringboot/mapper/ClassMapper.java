@@ -20,17 +20,18 @@ public interface ClassMapper {
     @Select("SELECT className FROM Class")
     List<String> getClassName();
 
-    @Insert("INSERT INTO Class VALUES(#{classId}, #{className}, #{tName})")
-    int insertClassroom(@Param("classId") String classId,
-                          @Param("className") String className,
-                          @Param("tName") String tName);
+    @Insert("INSERT INTO Class VALUES(#{classId}, #{className}, #{tName}, #{tId})")
+    int insertClassroom(@Param("classId") int classId,
+                        @Param("className") String className,
+                        @Param("tName") String tName,
+                            @Param("tId") String tId);
 
     @Update("UPDATE Class SET className=#{className}, tName=#{tName} WHERE classId=#{classId}")
-    int updateClassroom(@Param("classId") String classId,
+    int updateClassroom(@Param("classId") int classId,
                           @Param("className") String className,
                           @Param("tName") String tName);
 
     @Delete("DELETE FROM Class WHERE classId=#{classId}")
-    int deleteClassroom(@Param("classId") String classId);
+    int deleteClassroom(@Param("classId") int classId);
 
 }
