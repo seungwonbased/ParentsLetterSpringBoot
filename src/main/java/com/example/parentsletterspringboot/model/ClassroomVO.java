@@ -1,13 +1,13 @@
 package com.example.parentsletterspringboot.model;
 
-public class Classroom {
+public class ClassroomVO {
 
     private int classId;
     private String className;
     private String tName;
     private String tId;
 
-    public Classroom(int classId, String className, String tName, String tId) {
+    public ClassroomVO(int classId, String className, String tName, String tId) {
         super();
         this.classId = classId;
         this.className = className;

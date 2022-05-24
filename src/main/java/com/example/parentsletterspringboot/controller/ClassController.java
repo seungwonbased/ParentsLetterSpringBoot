@@ -1,7 +1,7 @@
 package com.example.parentsletterspringboot.controller;
 
 import com.example.parentsletterspringboot.mapper.ClassMapper;
-import com.example.parentsletterspringboot.model.Classroom;
+import com.example.parentsletterspringboot.model.ClassroomVO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,12 +17,12 @@ public class ClassController {
 
     // 조회
     @GetMapping("/class/{classId}")
-    public Classroom getClassroom(@PathVariable("classId") String classId) {
+    public ClassroomVO getClassroom(@PathVariable("classId") String classId) {
         return mapper.getClassroom(classId);
     }
 
     @GetMapping("/class/all")
-    public List<Classroom> getClassList() {
+    public List<ClassroomVO> getClassList() {
         return mapper.getClassroomList();
     }
 
@@ -38,7 +38,7 @@ public class ClassController {
 
     // 삽입
     @PutMapping("/class/{classId}")
-    public void putClass(@PathVariable int classId,
+    public void putClass(@PathVariable("classId") int classId,
                          @RequestParam("className") String className,
                          @RequestParam("tName") String tName,
                          @RequestParam("tId") String tId) {

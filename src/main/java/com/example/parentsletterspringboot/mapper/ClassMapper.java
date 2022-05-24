@@ -1,6 +1,6 @@
 package com.example.parentsletterspringboot.mapper;
 
-import com.example.parentsletterspringboot.model.Classroom;
+import com.example.parentsletterspringboot.model.ClassroomVO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -9,10 +9,10 @@ import java.util.List;
 public interface ClassMapper {
 
     @Select("SELECT * FROM Class where classId=#{classId}")
-    Classroom getClassroom(@Param("classId") String classId);
+    ClassroomVO getClassroom(@Param("classId") String classId);
 
     @Select("SELECT * FROM Class")
-    List<Classroom> getClassroomList();
+    List<ClassroomVO> getClassroomList();
 
     @Select("SELECT tName FROM Class")
     List<String> getTName();
