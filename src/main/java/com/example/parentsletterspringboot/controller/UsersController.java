@@ -34,6 +34,14 @@ public class UsersController {
         mapper.insertUsers(id, pw, phone, name, isTeacher);
     }
 
+//    @PostMapping("/users/new")
+//    public void postUsers(@PathVariable("id") String id,
+//                         @RequestParam("pw") String pw,
+//                         @RequestParam("phone") String phone,
+//                         @RequestParam("name") String name,
+//                         @RequestParam("isTeacher") int isTeacher) {
+//        mapper.insertUsers(id, pw, phone, name, isTeacher);
+//    }
 
 
 

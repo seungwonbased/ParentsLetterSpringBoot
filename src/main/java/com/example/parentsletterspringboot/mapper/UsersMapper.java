@@ -20,7 +20,7 @@ public interface UsersMapper {
     @Select("SELECT id FROM users")
     List<String> getUsersId();
 
-    @Insert("INSERT INTO users VALUES(#{id}, #{pw}, #{phone}, #{name}, #{isTeacher}")
+    @Insert("INSERT INTO users VALUES(#{id}, #{pw}, #{phone}, #{name}, #{isTeacher})")
     int insertUsers(@Param("id") String id,
                  @Param("pw") String pw,
                  @Param("phone") String phone,

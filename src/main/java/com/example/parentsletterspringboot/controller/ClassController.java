@@ -37,12 +37,11 @@ public class ClassController {
     }
 
     // 삽입
-    @PutMapping("/class/{classId}")
-    public void putClass(@PathVariable("classId") int classId,
-                         @RequestParam("className") String className,
+    @PutMapping("/class/{className}")
+    public void putClass(@PathVariable("className") String className,
                          @RequestParam("tName") String tName,
                          @RequestParam("tId") String tId) {
-        mapper.insertClassroom(classId, className, tName, tId);
+        mapper.insertClassroom(className, tName, tId);
     }
 
     // 수정

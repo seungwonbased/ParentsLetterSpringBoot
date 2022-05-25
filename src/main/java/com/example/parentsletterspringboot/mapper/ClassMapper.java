@@ -20,9 +20,8 @@ public interface ClassMapper {
     @Select("SELECT className FROM Class")
     List<String> getClassName();
 
-    @Insert("INSERT INTO Class VALUES(#{classId}, #{className}, #{tName}, #{tId})")
-    int insertClassroom(@Param("classId") int classId,
-                        @Param("className") String className,
+    @Insert("INSERT INTO Class VALUES(#{className}, #{tName}, #{tId})")
+    int insertClassroom(@Param("className") String className,
                         @Param("tName") String tName,
                             @Param("tId") String tId);
 
