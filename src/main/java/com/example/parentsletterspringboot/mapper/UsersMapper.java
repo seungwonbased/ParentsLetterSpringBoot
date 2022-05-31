@@ -26,4 +26,7 @@ public interface UsersMapper {
                  @Param("phone") String phone,
                  @Param("name") String name,
                  @Param("isTeacher") int isTeacher);
+    @Select("SELECT * FROM users WHERE id=#{id} AND pw={pw}")
+    UsersVO login(@Param("id") String id,
+                   @Param("pw") String pw);
 }
