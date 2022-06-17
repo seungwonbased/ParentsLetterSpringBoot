@@ -1,6 +1,7 @@
 package com.example.parentsletterspringboot.controller;
 
 import com.example.parentsletterspringboot.mapper.ClassMapper;
+import com.example.parentsletterspringboot.model.ClassNameVO;
 import com.example.parentsletterspringboot.model.ClassroomVO;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class ClassController {
     }
 
     @GetMapping("/class/className")
-    public List<String> getClassName() {
+    public List<ClassNameVO> getClassName() {
         return mapper.getClassName();
     }
 
@@ -53,9 +54,9 @@ public class ClassController {
     }
 
     // 삭제
-    @DeleteMapping("/class/{classId}")
-    public void deleteClass(@PathVariable("classId") int classId) {
-        mapper.deleteClassroom(classId);
+    @DeleteMapping("/class/{className}")
+    public void deleteClass(@PathVariable("className") String className) {
+        mapper.deleteClassroom(className);
     }
 
 }
